@@ -1,9 +1,8 @@
 - name: catalogue
   hosts: catalogue
-  bocome: yes
+  become: yes
   tasks:
   
   - name: disabled oldnodejs and enabled new nodejs
     ansible.builtin.shell: dnf module disable nodejs -y ; dnf module enable nodejs:18 -y
 
-    
