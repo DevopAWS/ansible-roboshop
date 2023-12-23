@@ -36,7 +36,7 @@
     args:
       chdir: /app
 
-  - name: copy the cart services
+  - name: copy the cart service
     asnible.builtin.copy:
       src: cart.service
       dest: /etc/systemd/system/cart.service
