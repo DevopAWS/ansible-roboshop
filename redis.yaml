@@ -1,0 +1,28 @@
+- name: redis
+  hosts: redis
+  become: yes
+  tasks:
+
+  - name: download application
+    ansible.builtin.get_url:
+      url: https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y
+      
+
+
+  - name: install redis
+    ansible.builtin.dnf: redis install
+
+  - name: replace ip address
+    ansible.builtin.replace:
+    path: /etc/redis.conf
+    regexp: '127.0.0.1'
+    replace: '0.0.0.0'
+
+  - name: enable and start redis
+    ansible.builtin.service:
+      name: redis
+      state: restarted
+      enabled: yes
+
+
+
