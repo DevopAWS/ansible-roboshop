@@ -51,20 +51,20 @@
       src: mongodb.repo
       dest: /etc/yum.repos.d/mongodb.repo
 
-  - name: install mogodb shell
+  - name: install mongodb client
     ansible.builtin.package:
-      name: mongodb-org-shell -y
+      name: mongodb-org-shell
       state: present
 
-  # - name: load the data
-  #   ansible.builtin.command: mongo --host mongodb.daws76.online < /app/schema/user.js
+  - name: load the data
+    ansible.builtin.command: mongo --host mongodb.daws76.online < /app/schema/user.js
 
 
-  # - name: start and enable the user
-  #   ansible.builtin.service:
-  #     name: user
-  #     state: present
-  #     enabled: yes
+  - name: start and enable the user
+    ansible.builtin.service:
+      name: user
+      state: present
+      enabled: yes
 
 
 
