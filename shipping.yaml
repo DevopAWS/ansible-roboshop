@@ -66,10 +66,10 @@
 
   - name: print output
     ansible.builtin.debug:
-      msg: "schema otuput: {{schema}}"
+      msg: "schema output: {{schema}}"
 
   - name: load cities data
-    ansible.builtin.shell: "mysql -h mysql.daws76.online -uroot -p{{mysql_password}} < /app/schema/shipping.sql"
+    ansible.builtin.shell: "mysql -h mysql.daws76.online -uroot -p{{mysql_password}}  < /app/schema/shipping.sql"
     when: schema.stdout != "1"
 
   - name: start and enabled
