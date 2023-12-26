@@ -62,7 +62,7 @@
       state: present
 
   - name: get the user count
-    ansible.builtin.command: user --host user.daws76.online --quiet --eval 'db = db.getSiblingDB("users"); db.users.count()'
+    ansible.builtin.command: mongo --host mongodb.daws76.online --quiet --eval 'db = db.getSiblingDB("users"); db.users.count()'
     register: user
 
   - name: load the data
