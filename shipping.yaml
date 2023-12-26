@@ -1,4 +1,4 @@
-- name: shipping
+- name: shipping component
   hosts: shipping
   become: yes
   vars:
