@@ -16,10 +16,10 @@
       name: mysql-community-server
       state: present
 
-  - name: start and enabled
+  - name: start and enable the mysql
     ansible.builtin.service:
       name: mysql
-      state: started
+      state: restarted
       enabled: yes
 
   - name: setup root password
