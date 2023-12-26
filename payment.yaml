@@ -53,7 +53,7 @@
 
   - name: enable and start
     ansible.builtin.service:
-      name: patment
+      name: payment
       state: restarted
       enabled: yes
 
