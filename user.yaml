@@ -67,7 +67,7 @@
 
   - name: load the data
     ansible.builtin.command: mongo --host mongodb.daws76.online < /app/schema/user.js
-    when: user ! == "0"
+    when: user.stdout == "0"
 
   - name: start and enable the user
     ansible.builtin.service:
