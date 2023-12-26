@@ -10,8 +10,8 @@
 
   - name: run nginx
     ansible.builtin.service:
-    name: nginx
-    state: started
+      name: nginx
+      state: started
 
   - name: remove old content
     ansible.builtin.file:
