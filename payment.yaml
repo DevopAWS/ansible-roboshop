@@ -1,15 +1,16 @@
-- name: payment
+- name: payment component
   hosts: payment
   become: yes
   tasks:
 
   - name: install python
     ansible.builtin.package:
-    name: {{item}}
-    loop
-      - python36 
-      - gcc 
-      - python3-devel
+      name: "{{item}}"
+      state: present
+    loop:
+    - python36 
+    - gcc 
+    - python3-devel
 
   - name: add user
     ansible.builtin.user:
